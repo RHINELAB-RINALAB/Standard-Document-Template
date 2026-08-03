@@ -1,0 +1,300 @@
+% ----------
+% Tech report template
+% 
+% ----------
+\documentclass[10pt,a4paper]{article}
+\usepackage{geometry}
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[runin]{abstract}
+\usepackage{titling}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{mlmodern}
+%\usepackage{piton} % Without this enable, it might not work for the listing package. Switch to LuaLateX if you want to use this option, however. 
+\usepackage{fancyhdr}
+%\usepackage{helvet}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{parskip}
+\usepackage{etoolbox}
+%\usepackage[scaled=0.90]{helvet} % Font 1
+%\usepackage[scaled=0.85]{beramono} % Font 2
+\usepackage{xcolor}
+\usepackage{hyperref}
+% Bibliography
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{bibb.bib} %Imports bibliography file
+
+\input{preamble.tex}
+
+% ----------
+% Variables
+% ----------
+
+\title{\textbf{Laboratory Member Personal Statement}, v1  \\ {\small Introduction and specification of personal information, disclosure, commitment, schedule, planning and attendance}} % Full title of your tech report
+\runningtitle{Personal documentations} % Short title
+\author{Fujimiya Amane \\ {\small Laboratory Principal Director and Researcher}} % Full list of authors
+\runningauthor{Amane et al.} % Short list of authors
+\affiliation{} % Affiliation e.g. University or Company
+\department{Your Department} % Department or Office
+\memoid{General-Sub-Serial-Additional Code} % ID of the tech report
+\theyear{Year} % year of the tech report
+\mydate{Full month, year} %the date
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+\definecolor{bg}{gray}{0.95}
+%\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+%  breakable=true,
+%  listing engine=minted,
+%  listing only,
+%  minted language=#2,
+%  minted style=default,
+%  minted options={%
+%    linenos,
+%    gobble=0,
+%    breaklines=true,
+%    breakafter=,,
+%    fontsize=\small,
+%    numbersep=8pt,
+%    #1},
+%  boxsep=0pt,
+%  left skip=0pt,
+%  right skip=0pt,
+%  left=25pt,
+%  right=0pt,
+%  top=3pt,
+%  bottom=3pt,
+%  arc=5pt,
+%  leftrule=0pt,
+%  rightrule=0pt,
+%  bottomrule=2pt,
+%  toprule=2pt,
+%  colback=bg,
+%  colframe=orange!70,
+%  enhanced,
+%  overlay={%
+%    \begin{tcbclipinterior}
+%    \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+%    \end{tcbclipinterior}},
+%  #3}
+
+% Python preset environment. 
+\newcommand{\pyobject}[1]{\fbox{\color{red}{\texttt{#1}}}}
+
+\NewDocumentCommand{\codeword}{v}{%
+\texttt{\textcolor{blue}{#1}}%
+}
+% Inline python highlighting (Might not look great, but eh)
+\lstset{language=Python,keywordstyle={\bfseries \color{blue}}}
+
+
+% ----------
+% actual document
+% ----------
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    \noindent
+    This is a template for all RHINELAB-RINALAB \textbf{personal information disclosure} of RHINELAB members or related, affiliated or requested people, scholar of interest. 
+    
+    This is \textbf{version 1} of the template. Subjected to change. 
+
+    \keywords{Keyword1, Keyword2, Keyword3}
+\end{abstract}
+
+\vspace{2.5cm}
+
+
+
+\thispagestyle{firstpage}
+
+\pagebreak
+
+% ----------
+% End of first page
+% ----------
+
+\newgeometry{} % Redefine geometries (normal margins)
+
+\section{Specification}
+\label{sec:spec}
+
+Provide specification details, metaprogramming. 
+
+\subsection{Document code, priority}
+
+Provide document codes, additional document code, purpose, organization, authorship and anyone contributing to the report, identification of purpose (proposal, or research, indexing 01). Priority code, additional conditions. Does it override anything, or add to anything?
+
+\subsection{Body of issue}
+
+Who issue, team or departmental attachment. Since this is a \textbf{structural document}, write down of which director or high-ranking member is responsible for this proposal template.  
+
+\subsection{Date and Version}
+
+Version specification across versions, and similarly date of construction. \textbf{Do not remove old dates}, for versioning record. 
+
+\section{Introduction}
+
+\begin{quote}
+    \textbf{Pre-note 1:} All documents of this form uses code \textbf{Statement} for document type, code, STM. 
+\end{quote}
+
+This is the template that would be used to give yourself a room to breath, that is, to specify yourself. The purpose is to give you some semi-formal template to present your following information, as an example that the lab would be interested in, such as: 
+\begin{itemize}
+    \item Personal background, details, what you have done, etc. 
+    \item Experience. 
+    \item Insights, thoughts, philosophical thinking and bias. 
+    \item Interesting fact (of course). 
+    \item Purpose and goals, aim in short-term or long-term. 
+    \item Planning and purpose of attending RHINELAB, long-term and short-term. 
+    \item Personal opinions and subjective opinions on various academic topics, if able. 
+    \item Laboratory planning, including \textbf{time commitment}, availability, schedule in-week, in-month or over a period; busy date, requesting leaves, vacation blackout\footnote{Essentially when you are out for fun, and we would not be able to contact you, plus will not expect you to be handling important tasks at that time.}, and more. 
+    \item In-laboratory projects or agenda, programme and research, academic and \textbf{scholastic activities} inside the laboratory. This \textbf{must include}: report cycle weekly or bi-weekly; nature of the research; \textit{commitment} to each and specific projects; tasks, what you are doing in this project; responsibility and request/mandate of recognition for what part of your research/project/participation for evaluation; and more information if you can think of.  
+    \item And more. 
+\end{itemize}
+If you want to list out more information, we are not afraid to give you a \textit{custom section} at the end of the document. \textbf{All checking personnel}, for example director using documents followed of this template \textbf{will have to read everything} at least once and capture, or understand the details of the document provided. The document \textbf{should not be used for}: 
+\begin{itemize}
+    \item Sensitive information disclosure. 
+    \item Harmful information. 
+    \item Third-party harmful or possibly depredatory and insult. 
+    \item Copyright-probable information or marks. 
+    \item Probable personal vendetta. 
+    \item Financial statement of anything, aside from financial background. 
+    \item Any other type of contents that other documents can be used to fill in. 
+\end{itemize}
+Within this limitation, you are free to do whatever you want with this document. You can use this introduction section for a narrative text, if you wish so. 
+
+\begin{quote}
+    \textbf{Note}: You do \textit{not} need to present any field in each personal statement that you do not need. However, in your \textit{first ever statement}, if able, please write and present all information of all fields. Otherwise, you will have to circle back and specify. If you are new members or inactive members as of date, write `No information to specify' and move on. 
+\end{quote}
+\section{Details}
+
+\subsection{Personal Background and Professional Experience}
+
+Facts and whatever about yourself. 
+
+\subsubsection{Biographical Details}
+Provide a comprehensive narrative of your origins, academic lineage, and foundational background. Detail the core experiences that have shaped your current trajectory, ensuring the checking personnel can grasp the overarching narrative of your past without superfluous details.
+
+\subsubsection{Professional Experience}
+Enumerate your prior roles, institutional affiliations, and notable accomplishments across the academic or industrial spectrum. Focus on the methodological and practical skills acquired during these tenures, emphasizing how they translate to your current operational capacity.
+
+\subsection{Intellectual Posture and Philosophical Perspectives}
+
+Personal statements, and philosophical commitments or so goes here. 
+
+\subsubsection{Philosophical Bias and Internal Insights}
+Elucidate the cognitive biases, ontological perspectives, and theoretical frameworks that govern your approach to research. 
+
+In general, what we have is to encourage deep, reflective discourse on how your internal philosophy inevitably influences your empirical work and theoretical formulations, if exists.
+
+\subsubsection{Subjective Academic Stances}
+Detail your personal opinions on prevailing academic paradigms, controversies, or methodological debates within your specific field. Be transparent about your methodological preferences and the subjective lenses through which you interpret scientific phenomena.
+
+\subsubsection{Curiosities and Interesting Facts}
+Include idiosyncratic details, personal trivia, or unexpected domains of knowledge you possess. 
+
+This serves to humanize your profile and may foster unforeseen, interdisciplinary collaborative synergies within the lab.
+
+\subsection{Strategic Objectives and RHINELAB Alignment}
+
+This section is just here for \textbf{current RHINELAB operations itself}.
+
+\subsubsection{General Purpose and Career Goals}
+Articulate your overarching ambitions, both in the immediate future and across your broader career trajectory. Outline the fundamental questions, societal challenges, or technological hurdles you are ultimately striving to resolve.
+
+\subsubsection{Purpose of Attending RHINELAB}
+Specify the exact rationale behind your integration into our specific infrastructure and ecosystem. Detail how RHINELAB serves as a necessary catalyst for your short-term deliverables, and how it aligns with your long-term scientific actualization.
+
+\subsection{Operational Planning and Availability Constraints}
+
+\subsubsection{Time Commitment and Routine Schedule}
+Delineate your exact availability, including in-week and in-month scheduling expectations. 
+
+If able (actually \textbf{required} by labs or groups), specify a precise accounting of the hours you intend to dedicate strictly to laboratory operations, ensuring expectations are clearly managed.
+
+\subsubsection{Vacation Blackouts and Leave Projections}
+Specify known dates of anticipated absence, structural leave requests, and strict vacation blackout periods. Also, if you can, include request or so for schedule of \textbf{national holidays} in your country, or religious holidays. 
+
+Ensure sufficient and `superb' clarity regarding the windows during which you will be entirely unreachable for administrative or scholastic correspondence.
+
+\subsection{In-Laboratory Research and Scholastic Agenda}
+
+Here, tasks and learning processes that directly relate to academics, school subjects, and intellectual growth is considered scholastic. As long as it \textit{belongs to RHINELAB ecosystem and space}, it is allowed to be specified. The requirement is also:
+
+\begin{itemize}
+    \item You \textbf{must specify} documentation or archival possibilities. Preferably documented, but not needed.  
+    \item You must be able to give short details on what it is. 
+\end{itemize}
+
+\subsubsection{Project Commitments and Nature of Research}
+Describe the specific projects you will undertake, dissecting the fundamental nature of the research and your exact operational tasks\footnote{While not always, but if there are people to read it, they would prefer clarity regarding your purview, technical responsibilities, and the depth of your commitment to these initiatives is required here.}.
+
+\subsubsection{Reporting Cycles and Evaluation Mandates}
+Define your intended administrative cadence, explicitly specifying whether you will adhere to a weekly, bi-weekly, or custom reporting cycle. 
+
+Furthermore, formally state your requirement, or your request regarding how your participation, intellectual property, and project contributions must be recognized and evaluated later on.
+
+\clearpage
+
+\section{Custom details}
+
+Fill in whatever here as narration. 
+
+\subsection{Supplementary Information and Unclassified Declarations}
+This section is reserved for any supplementary information, operational notes, or personal declarations that fundamentally do not conform to the predefined detailed structure above. 
+
+Feel free to just to append any necessary fields, narratives, or customized parameters here to ensure your profile is comprehensive and representative of yourself, that is at least we will not have you wrong. 
+
+
+
+\clearpage
+
+\section*{Acknowledgements (optional)}
+
+Thanks again to \textbf{Person 1} and \textbf{Affiliation A} for their financial support. Thanks \textbf{Person 2}, \textbf{Person 3}, etc. for their participation in drafting this document. Further information. 
+
+% ----------
+% Bibliography
+% ----------
+
+% \bibliography{../biblio.bib}
+% \bibliographystyle{abbrv}
+
+\appendix
+
+\section{An appendix}
+
+Appendix to more information. Analysis, cost process, etc. 
+
+\section{Another appendix}
+
+\subsection*{Subsectioning in appendix}
+
+Some more text, and a list:
+
+\blindenumerate
+
+
+
+\section{Citations}
+Items that are cited: \textit{The \LaTeX\ Companion} book \cite{latexcompanion} together with Einstein's journal paper \cite{einstein} and Dirac's book \cite{dirac}---which are physics-related items. Next, citing two of Knuth's books: \textit{Fundamental Algorithms} \cite{knuth-fa} and \textit{The Art of Computer Programming} \cite{knuthwebsite}.
+
+
+Remember to change this to your respective bibliography. Usually, the file that holds the bibliography in the path is \texttt{bibb.bib}, so beware of that. The below part where there is \texttt{printbibliography} does it work - it prints the bibliography. Cite them using the \texttt{cite} key seen in the above citation. 
+
+\medskip
+
+\printbibliography %Prints bibliography
+
+
+\end{document}
+
+% ----------
